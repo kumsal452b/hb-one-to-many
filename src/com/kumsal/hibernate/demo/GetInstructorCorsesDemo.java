@@ -12,7 +12,7 @@ import com.kumsal.demo.entity.Instructor;
 import com.kumsal.demo.entity.InstructorDetail;
 import com.kumsal.demo.entity.Student;
 
-public class CreateInstructorDemo {
+public class GetInstructorCorsesDemo {
 
 	public static void main(String[] args) {
 		SessionFactory sessionFactory=new Configuration()
