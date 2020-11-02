@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -21,6 +22,7 @@ public class Course {
 	private String title;
 	
 	@ManyToOne(cascade={CascadeType.DETACH, CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JoinColumn(name="instructor_id")
 	private Instructor instructor;
 	public Course() {
 		// TODO Auto-generated constructor stub
