@@ -41,7 +41,7 @@ public class Instructor {
 	private List<Course> course;
 	
 	public Instructor() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Instructor(String lastName, String firstName, String email) {
@@ -91,6 +91,14 @@ public class Instructor {
 
 	public int getId() {
 		return id;
+	}
+
+	public List<Course> getCourse() {
+		return course;
+	}
+
+	public void setCourse(List<Course> course) {
+		this.course = course;
 	}
 	
 	
