@@ -1,5 +1,10 @@
 package com.kumsal.demo.entity;
 
-public class Course {
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="course")
+public class Course {
+		
 }
