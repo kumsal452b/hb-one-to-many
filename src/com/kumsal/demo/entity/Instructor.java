@@ -1,5 +1,6 @@
 package com.kumsal.demo.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -101,5 +102,11 @@ public class Instructor {
 		this.course = course;
 	}
 	
-	
+	public void addCourse(Course tempCourse){
+		if (course==null) {
+			course=new ArrayList<>();
+		}
+		course.add(tempCourse);
+		tempCourse.setInstructor(this);
+	}
 }
