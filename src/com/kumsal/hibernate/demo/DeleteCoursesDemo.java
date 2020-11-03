@@ -23,28 +23,20 @@ public class DeleteCoursesDemo {
 		
 		session.beginTransaction();
 		try {
-			
+			int id=14;
 		
-			int id=1;
-			Instructor tempInstructor=session.get(Instructor.class, id);
+			Course tempCourse=session.get(Course.class, 14);
 			
-			Course course1=new Course("Spring bohjhjot");
+			tempCourse.getInstructor().setCourse(null);
 			
-			Course course2=new Course("Andorid studio");
-			
-			tempInstructor.addCourse(course1);
-			tempInstructor.addCourse(course2);
-			
-			session.save(course1);
-			session.save(course2);
-
-			System.out.println("Saved :" +tempInstructor);
-			session.save(tempInstructor);
+			session.delete(tempCourse);
 			
 			session.getTransaction().commit();
 			session.close();
-			System.out.println("Saved succesfuly");
+			System.out.println("Delete succesfuly");
 		} finally {
+			session.close();
+			sessionFactory.close();
 			// TODO: handle finally clause
 		}
 
