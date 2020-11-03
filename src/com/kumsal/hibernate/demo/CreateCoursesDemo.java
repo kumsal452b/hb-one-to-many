@@ -24,14 +24,19 @@ public class CreateCoursesDemo {
 		session.beginTransaction();
 		try {
 			
-			Instructor tempInstructor=new Instructor("Alatas", "Kumsal", "kumsal@gmail.com");
+		
+			int id=1;
+			Instructor tempInstructor=session.get(Instructor.class, id);
 			
-			InstructorDetail tempInsDetail=new InstructorDetail("kumsalYoutube", "i like to read books");
+			Course course1=new Course("Spring boot");
 			
-			Course tempCourse=new Course("Math and hibernate");
+			Course course2=new Course("Andorid studio");
 			
-			session=sessionFactory.getCurrentSession();
-			tempInstructor.setInstructorDetail(tempInsDetail);
+			tempInstructor.addCourse(course1);
+			tempInstructor.addCourse(course2);
+			
+			session.save(course1);
+			session.save(course2);
 
 			System.out.println("Saved :" +tempInstructor);
 			session.save(tempInstructor);
