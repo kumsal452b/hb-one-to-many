@@ -32,7 +32,9 @@ public class DeleteCoursesDemo {
 			session.delete(tempCourse);
 			
 			session.getTransaction().commit();
+			
 			session.close();
+			
 			System.out.println("Delete succesfuly");
 		} finally {
 			session.close();
